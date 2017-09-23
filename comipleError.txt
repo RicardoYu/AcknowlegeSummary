@@ -1,0 +1,36 @@
+Description： When I compile one file with the error information "*** does not name a type" and the class's definition.
+
+There are four reasons can cause this error:
+
+1, Class's namespace was not used. /*没有包含引用的类的命名空间*/
+
+namespace earth{
+   namespace china{
+   
+   class Tree(){
+
+   }
+}
+}
+
+while, maybe you use the class as following:
+
+    new Tree();  //if there is no namespace included, compiler will warn comiple error:
+
+2, Don't add the class's head file /*没有包含类的头文件*/
+
+3，cross reference /*交叉引用*/
+For example：
+
+file1.cpp
+class A{
+   class A(B &temp){
+   } 
+
+}
+
+file2.cpp
+class B{
+   class B(A &temp){
+   }
+}
