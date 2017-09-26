@@ -1,8 +1,7 @@
-
 /***************************************
  *  description
  *  ***********************************/
-we can get the same issue in the website of Stack Overflow, and 
+/* we can get the same issue in the website of Stack Overflow, and 
 the title named "Why do I get “warning: missing initializer for member”? [-Wmissing-field-initializers]"
 
 https://stackoverflow.com/questions/21658485/why-do-i-get-warning-missing-initializer-for-member-wmissing-field-initial
@@ -32,6 +31,9 @@ I've read through How should I properly initialize a C struct from C++?, Why is 
  *  solution
  *  ***********************************/
 //Below is the prefered solution to initialize a struct.
+#endif
+/*I've read through How should I properly initialize a C struct from C++?, Why is the compiler throwing this warning: "missing initializer"? Isn't the structure initialized?, and bug reports like http://gcc.gnu.org/bugzilla/show_bug.cgi?id=36750. I don't understand why the uninitialized struct is not generating a warning, while the initialized struct is generating a warning.
+*/
 truct sigaction old_handler;
 memset(&old_handler,0,sizeof(sigaction));
 
