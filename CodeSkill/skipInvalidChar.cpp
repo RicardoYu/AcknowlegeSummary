@@ -6,7 +6,7 @@
  *
  *
  ********************************************/
-
+//Below will skip the uonnumeric charater
 #define SKIP_CHAR(STRING) \
 	do{\
 		while((STRING != NULL) && \
